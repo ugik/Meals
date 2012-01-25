@@ -11,6 +11,15 @@ group :development do
   gem 'faker', '0.3.1'
 end
 
+gem 'therubyracer'
+  
+group :production do
+  gem 'faker', '0.3.1'
+  # gems specifically for Heroku go here
+  gem 'pg'
+  gem 'therubyracer-heroku'
+end
+
 group :test do
   gem 'rspec-rails', '2.6.1'
   gem 'webrat', '0.7.1'
