@@ -3,7 +3,7 @@
 }
 
 body {
-  background: #cff;
+  background: #99FFFF;
 }
 
 header {
@@ -84,7 +84,7 @@ a.signup_button {
   text-align: center;
   width: 190px;
   color: #fff;
-  background: #006400;
+  background: #000099;
   font-size: 150%;
   font-weight: bold;
   padding: 20px;
