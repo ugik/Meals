@@ -1,0 +1,13 @@
+development:
+  access_key_id: AKIAIZMYIP4IJM4ZDG4A
+  secret_access_key: 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
+
+test:
+  access_key_id: AKIAIZMYIP4IJM4ZDG4A
+  secret_access_key: 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
+
+production:
+  access_key_id: AKIAIZMYIP4IJM4ZDG4A
+  secret_access_key: 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
+
+
