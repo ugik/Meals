@@ -1,5 +1,5 @@
 <li>
-  <%= gravatar_for user, :size => 30 %>
+  <%= avatar_for(user) %>
   <%= link_to user.name, user %>
   <% if current_user.admin? %>
   |

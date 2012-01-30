@@ -4,4 +4,12 @@ module UsersHelper
                                             :class => 'gravatar',
                                             :gravatar => options)
   end
+
+  def avatar_for(user)
+        if user.avatar_file_name != nil
+             image_tag user.avatar.url(:thumb)
+        end
+  end
+
 end
+

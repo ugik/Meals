@@ -1,21 +1,16 @@
-# == Schema Information
-# Schema version: 20100829021049
-#
-# Table name: users
-#
-#  id                 :integer         not null, primary key
-#  name               :string(255)
-#  email              :string(255)
-#  created_at         :datetime
-#  updated_at         :datetime
-#  encrypted_password :string(255)
-#  salt               :string(255)
-#  admin              :boolean
-#
-
 class User < ActiveRecord::Base
   attr_accessor   :password
-  attr_accessible :name, :email, :password, :password_confirmation
+  attr_accessible :name, :email, :password, :password_confirmation, :avatar
+
+  has_attached_file :avatar,
+                    :styles => {
+                      :thumb => "50x50>",
+                      :small => "150x150>"
+                    },
+    :storage => :s3,
+    :s3_credentials => S3_CREDENTIALS,
+    :path => ":attachment/:id/:style.:extension",
+    :bucket => 'ugik_images'
   
   has_many :microposts,    :dependent => :destroy
   has_many :relationships, :dependent => :destroy,
