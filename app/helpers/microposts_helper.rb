@@ -4,6 +4,12 @@ module MicropostsHelper
     sanitize(raw(content.split.map{ |s| wrap_long_string(s) }.join(' ')))
   end
 
+  def image_for(post)
+        if post.image.exists?
+             image_tag post.image.url(:small)
+        end
+  end
+
   private
 
     def wrap_long_string(text, max_width = 30)

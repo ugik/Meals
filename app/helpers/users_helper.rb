@@ -6,7 +6,7 @@ module UsersHelper
   end
 
   def avatar_for(user)
-        if user.avatar_file_name != nil
+        if user.avatar.exists?
              image_tag user.avatar.url(:thumb)
         end
   end

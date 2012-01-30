@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
                     },
     :storage => :s3,
     :s3_credentials => S3_CREDENTIALS,
-    :path => ":attachment/:id/:style.:extension",
+    :path => "Meals/:attachment/:id/:style.:extension",
     :bucket => 'ugik_images'
   
   has_many :microposts,    :dependent => :destroy

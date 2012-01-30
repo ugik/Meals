@@ -11,8 +11,18 @@
 #
 
 class Micropost < ActiveRecord::Base
-  attr_accessible :content
+  attr_accessible :content, :image
   
+  has_attached_file :image,
+                    :styles => {
+                      :thumb => "50x50>",
+                      :small => "150x150>"
+                    },
+    :storage => :s3,
+    :s3_credentials => S3_CREDENTIALS,
+    :path => "Meals/:attachment/:id/:style.:extension",
+    :bucket => 'ugik_images'
+
   belongs_to :user
   
   validates :content, :presence => true, :length => { :maximum => 140 }
